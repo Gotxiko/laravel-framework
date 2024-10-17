@@ -31,6 +31,7 @@
                             <textarea id="message" name="message" required></textarea>
                             <button type="submit">Enviar</button>
                         </form>
+                        <button type="button" data-cc="show-preferencesModal">Manage cookie preferences</button>
                     </main>
 
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">

@@ -28,7 +28,7 @@
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" required>
                             <label for="message">Mensaje:</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <textarea id="message" name="message" class="text-black" required></textarea>
                             <button type="submit">Enviar</button>
                         </form>
                         <button type="button" data-cc="show-preferencesModal">Manage cookie preferences</button>

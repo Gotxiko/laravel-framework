@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\CustomEmail;
 
 class EmailController extends Controller
 {
@@ -13,18 +14,17 @@ class EmailController extends Controller
             'email' => 'required|email',
             'message' => 'required',
         ]);
-
+    
         $details = [
             'email' => $request->email,
             'message' => $request->message,
         ];
-
-        Mail::send([], [], function ($message) use ($details) {
+    
+        Mail::send('email.notification', ['details' => $details], function($message) use ($details) {
             $message->to($details['email'])
-                    ->subject('Nuevo Mensaje')
-                    ->setBody($details['message'], 'text/html');
+                    ->subject('Notificación');
         });
-
+    
         return back()->with('success', 'Email enviado correctamente.');
     }
 }
